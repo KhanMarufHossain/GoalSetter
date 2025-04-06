@@ -1,66 +1,30 @@
-import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, Text, View,TextInput, Button } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
-
+import { View, Text, FlatList, StyleSheet } from "react-native";
+import GoalInput from "./Components/goalinput";
+import GoalItem from "./goalItem";
 export default function App() {
-
-  const [CourseGoals, setCourseGoals] = useState([]);
-  const [enteredText, setEnteredText]= useState('');
-  const textChanged= (text)=>
-  { 
-    setEnteredText(text);
-  }
-  const Buttonpress = ()=>
-  {
-    setCourseGoals((currentcourseGoals)=> {
-      return [...currentcourseGoals, enteredText]
-    });
-  }
+  const [courseGoals, setCourseGoals] = useState([]);
   return (
-    <View style= {styles.mainContainer}>
-      <View style= {styles.firstContainer}>
-        <TextInput style={styles.inputText} placeholder="Put Goals" onChangeText={textChanged}></TextInput>
-        <Button title="ADD GOAL" onPress={Buttonpress}/>
-      </View>
-      <View>
-         <Text style= {{color: 'pink', fontWeight: 'bold', fontSize: 20, paddingBottom: 30}}>Your Goals: </Text>
-        {CourseGoals.map((goal, index)=> 
-          <Text key={index} style={{color: "white", fontSize: 15}}>{goal}</Text>
-        )}
-      
+    <View style={styles.mainContainer}>
+      <GoalInput courseGoals={courseGoals} setCourseGoals={setCourseGoals} />
+      <View style={{ flex: 8 }}>
+        <Text style={styles.yourGoals}>Your Goals:</Text>
+        <GoalItem courseGoals={courseGoals} />
       </View>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
-  mainContainer :{
-    flex:1, 
-    padding: 20,
-    paddingTop: 50,
+  mainContainer: {
+    flex: 1,
+    padding: 10,
+    paddingTop: 10,
     backgroundColor: "black",
   },
-  firstContainer: {
-    
-    flexDirection:'row',
-    justifyContent:'space-between',
-    // padding: 15,
-    paddingTop: 10,
-    paddingBottom:20,
-    alignItems: 'center',
-    
-  },
-  inputText: {
-    width: '75%',
+  yourGoals: {
+    color: "rgb(160, 145, 105)",
     padding: 10,
-    borderColor: 'red',
-    borderWidth:1,
-    borderRightWidth:10,
-    marginRight:5,
-    backgroundColor: 'white',
-    
-    
-  }
+    fontSize: 20,
+    fontWeight: "bold",
+  },
 });
-
