@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Text, View, FlatList,StyleSheet } from "react-native";
+
+import { Text,  FlatList,StyleSheet } from "react-native";
 import GoalInput from "./goalinput"
 export default function GoalItem({ courseGoals }) {
   return (

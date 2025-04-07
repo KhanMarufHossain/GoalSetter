@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import GoalInput from "./Components/goalinput";
 import GoalItem from "./Components/goalItem";
 export default function App() {
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     backgroundColor: "black",
   },
-  yourGoals: {
+  yourGoals: {  
     color: "rgb(160, 145, 105)",
     padding: 10,
     fontSize: 20,
