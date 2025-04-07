@@ -1,6 +1,5 @@
-
 import { Text,  FlatList,StyleSheet } from "react-native";
-import GoalInput from "./goalinput"
+// import GoalInput from "./goalinput"
 export default function GoalItem({ courseGoals }) {
   return (
     <FlatList
