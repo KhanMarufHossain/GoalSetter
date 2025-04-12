@@ -9,7 +9,7 @@ export default function App() {
       <GoalInput courseGoals={courseGoals} setCourseGoals={setCourseGoals} />
       <View style={{ flex: 8 }}>
         <Text style={styles.yourGoals}>Your Goals:</Text>
-        <GoalItem courseGoals={courseGoals} />
+        <GoalItem courseGoals={courseGoals} setCourseGoals={setCourseGoals} />
       </View>
     </View>
   );
