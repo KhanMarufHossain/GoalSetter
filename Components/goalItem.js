@@ -13,11 +13,7 @@ export default function GoalItem({ courseGoals, setCourseGoals }) {
       renderItem={(itemData) => (
         <Pressable
           android_ripple={{ color: "red" }}
-          style={{
-            alignSelf: "flex-start",
-            borderRadius: 20,
-            overflow: "hidden",
-          }}
+          style={styles.pressable}
           onPress={() => {
             deleteGoalHandler(itemData.item.key);
           }}
@@ -37,5 +33,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 5,
     padding: 10,
+  },
+  pressable: {
+    alignSelf: "flex-start",
+    borderRadius: 20,
+    overflow: "hidden",
   },
 });
