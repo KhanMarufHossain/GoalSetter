@@ -12,6 +12,12 @@ export default function GoalItem({ courseGoals, setCourseGoals }) {
       data={courseGoals}
       renderItem={(itemData) => (
         <Pressable
+          android_ripple={{ color: "red" }}
+          style={{
+            alignSelf: "flex-start",
+            borderRadius: 20,
+            overflow: "hidden",
+          }}
           onPress={() => {
             deleteGoalHandler(itemData.item.key);
           }}
@@ -30,6 +36,6 @@ const styles = StyleSheet.create({
     color: "rgba(42, 230, 136, 0.93)",
     fontSize: 18,
     marginBottom: 5,
-    padding: 5,
+    padding: 10,
   },
 });
