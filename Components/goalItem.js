@@ -1,12 +1,11 @@
 import { Text, FlatList, StyleSheet, Pressable } from "react-native";
-import GoalInput from "./goalinput"
+import GoalInput from "./goalinput";
 export default function GoalItem({ courseGoals, setCourseGoals }) {
-  
-   const deleteGoalHandler= (id)=>{
-      setCourseGoals((currentcourseGoals)=>{
-        return currentcourseGoals.filter((goal)=>goal.key!==id)
-      });
-   }
+  const deleteGoalHandler = (id) => {
+    setCourseGoals((currentcourseGoals) => {
+      return currentcourseGoals.filter((goal) => goal.key !== id);
+    });
+  };
 
   return (
     <FlatList
@@ -14,7 +13,7 @@ export default function GoalItem({ courseGoals, setCourseGoals }) {
       renderItem={(itemData) => (
         <Pressable
           onPress={() => {
-             deleteGoalHandler(itemData.item.key)
+            deleteGoalHandler(itemData.item.key);
           }}
         >
           <Text style={styles.individualGoals}>{itemData.item.text}</Text>

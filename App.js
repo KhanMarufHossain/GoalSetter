@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     backgroundColor: "black",
   },
-  yourGoals: {  
+  yourGoals: {
     color: "rgb(160, 145, 105)",
     padding: 10,
     fontSize: 20,
