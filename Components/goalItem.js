@@ -11,8 +11,8 @@ export default function GoalItem({ courseGoals, setCourseGoals }) {
     <FlatList
       data={courseGoals}
       renderItem={(itemData) => (
-        <Pressable
-          android_ripple={{ color: "red" }}
+        <Pressable android_ripple= {{color: "red"}}
+          
           style={styles.pressable}
           onPress={() => {
             deleteGoalHandler(itemData.item.key);
