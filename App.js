@@ -3,11 +3,13 @@ import { useState } from "react";
 import { View, Text, StyleSheet, Modal, Button } from "react-native";
 import GoalInput from "./Components/goalinput";
 import GoalItem from "./Components/goalItem";
+import { StatusBar } from "expo-status-bar";
 export default function App() {
   const [courseGoals, setCourseGoals] = useState([]);
   const [modalIsVisible, setModalIsVisible] = useState(false);
 
   return (
+    <><StatusBar style="light"/>
     <View style={styles.mainContainer}>
       <View style={styles.goalsContainer}>
         <Text style={styles.yourGoals}>Your Goals:</Text>
@@ -17,7 +19,7 @@ export default function App() {
         <Button
           title="Add New Goal"
           onPress={() => setModalIsVisible(true)}
-          color="rgb(160, 145, 105)"
+          color="rgba(82, 184, 119, 0.79)"
         />
       </View>
 
@@ -30,7 +32,7 @@ export default function App() {
           />
         </View>
       </Modal>
-    </View>
+    </View></>
   );
 }
 
@@ -46,14 +48,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   goalsContainer: {
-    flex: 8,
+    flex: 7,
     paddingHorizontal: 10,
     paddingTop: 50,
   },
   yourGoals: {
-    color: "rgb(160, 145, 105)",
-    fontSize: 20,
-    fontWeight: "bold",
+    color: "rgba(82, 216, 214, 0.88)",
+    fontSize: 25,
+    fontWeight: "normal",
     marginBottom: 10,
   },
   modalContainer: {

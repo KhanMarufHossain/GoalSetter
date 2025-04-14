@@ -1,7 +1,6 @@
 // Goalinput.js
 import { useState } from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
-
+import { View, TextInput, Button, StyleSheet,Image } from "react-native";
 export default function GoalInput({ courseGoals, setCourseGoals, onCancel }) {
   const [enteredText, setEnteredText] = useState("");
 
@@ -21,6 +20,7 @@ export default function GoalInput({ courseGoals, setCourseGoals, onCancel }) {
 
   return (
     <View style={styles.firstContainer}>
+      <Image style={styles.Image} source={require('../assets/goal.png')}/>
       <TextInput
         placeholder="Put Your Goals Here"
         onChangeText={textChanged}
@@ -47,7 +47,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRightWidth: 10,
     marginBottom: 10,
+    borderRadius: 5,
     backgroundColor: "white",
+    
   },
   firstContainer: {
     flex: 1,
@@ -58,9 +60,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginTop: 16,
+    
   },
   button: {
     width: 100,
     marginHorizontal: 8,
+    
   },
+  Image: {
+    width: 100, 
+    height: 100, 
+    alignSelf: 'center', 
+    marginBottom: 20, 
+    resizeMode: 'contain' 
+    
+    
+  }
 });
