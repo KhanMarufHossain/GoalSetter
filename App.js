@@ -9,27 +9,23 @@ export default function App() {
 
   return (
     <View style={styles.mainContainer}>
-      
+      <View style={styles.goalsContainer}>
+        <Text style={styles.yourGoals}>Your Goals:</Text>
+        <GoalItem courseGoals={courseGoals} setCourseGoals={setCourseGoals} />
+      </View>
       <View style={styles.header}>
-        <Button 
-          title="Add New Goal" 
+        <Button
+          title="Add New Goal"
           onPress={() => setModalIsVisible(true)}
           color="rgb(160, 145, 105)"
         />
       </View>
 
-      
-      <View style={styles.goalsContainer}>
-        <Text style={styles.yourGoals}>Your Goals:</Text>
-        <GoalItem courseGoals={courseGoals} setCourseGoals={setCourseGoals} />
-      </View>
-
-      
       <Modal visible={modalIsVisible} animationType="slide">
         <View style={styles.modalContainer}>
-          <GoalInput 
-            courseGoals={courseGoals} 
-            setCourseGoals={setCourseGoals} 
+          <GoalInput
+            courseGoals={courseGoals}
+            setCourseGoals={setCourseGoals}
             onCancel={() => setModalIsVisible(false)}
           />
         </View>
@@ -47,10 +43,12 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingHorizontal: 10,
     paddingBottom: 10,
+    flex: 1,
   },
   goalsContainer: {
-    flex: 1,  // Takes all remaining space
+    flex: 8,
     paddingHorizontal: 10,
+    paddingTop: 50,
   },
   yourGoals: {
     color: "rgb(160, 145, 105)",
