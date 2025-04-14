@@ -1,5 +1,6 @@
+// Goalitem.js
 import { Text, FlatList, StyleSheet, Pressable } from "react-native";
-import GoalInput from "./goalinput";
+
 export default function GoalItem({ courseGoals, setCourseGoals }) {
   const deleteGoalHandler = (id) => {
     setCourseGoals((currentcourseGoals) => {
@@ -11,8 +12,8 @@ export default function GoalItem({ courseGoals, setCourseGoals }) {
     <FlatList
       data={courseGoals}
       renderItem={(itemData) => (
-        <Pressable android_ripple= {{color: "red"}}
-          
+        <Pressable 
+          android_ripple={{color: "red"}}
           style={styles.pressable}
           onPress={() => {
             deleteGoalHandler(itemData.item.key);
