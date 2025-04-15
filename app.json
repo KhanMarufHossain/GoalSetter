@@ -19,10 +19,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.maruf_hossain03.GoalSetter"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "abf5f81a-21b8-4aa0-9421-7e024702c38e"
+      }
+    },
+    "owner": "maruf_hossain03"
   }
 }

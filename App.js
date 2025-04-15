@@ -53,9 +53,9 @@ const styles = StyleSheet.create({
     paddingTop: 50,
   },
   yourGoals: {
-    color: "rgba(82, 216, 214, 0.88)",
+    color: "rgba(82, 184, 119, 0.79)",
     fontSize: 25,
-    fontWeight: "normal",
+    fontWeight: "semibold",
     marginBottom: 10,
   },
   modalContainer: {
